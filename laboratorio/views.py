@@ -4,9 +4,19 @@ from .models import Laboratorio
 from django.http import HttpResponseRedirect
 # Create your views here.
 def v_list(request):
+
+    if 'numveces' in request.session:
+        num = request.session["numveces"] # Se obtiene la var. de sesion
+    else:
+        num = 0
+    
+    request.session["numveces"] = num + 1 # Se guarda la variable de sesion
+
     context = {
+        'numveces': request.session["numveces"],
         'labos': Laboratorio.objects.all()
-    }
+    }    
+
     return render(request, 'list.html', context)
 
 def v_create(request):
