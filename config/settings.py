@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DB_NAME"),# 'natureza_finaldrilling',
-        'USER': os.getenv("DB_USER"),# 'natureza_finaldrilling',
-        'PASSWORD': os.getenv("DB_PASSWORD"),# '@finaldri@',
-        'HOST': os.getenv("DB_HOST"),# 'postgresql-natureza.alwaysdata.net'
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
         'PORT': os.getenv("DB_PORT"),
     }
 }
